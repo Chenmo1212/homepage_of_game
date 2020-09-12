@@ -1,7 +1,7 @@
 <template>
   <div class="mine">
     <ul class="bg-bubbles">
-      <li v-for="(index) in bubbles" :key="index"></li>
+      <li v-for="(item, index) in bubbles" :key="index"></li>
     </ul>
 
     <div class="hero" id="particles-js">
@@ -33,7 +33,7 @@
           <div class="text">Github</div>
           <div class="icon right"></div>
         </li>
-        <li @click="showModal = true">
+        <li @click="handleModal('about')">
           <div class="icon left about"></div>
           <div class="text">关于</div>
           <div class="icon right"></div>
@@ -43,7 +43,7 @@
           <!--<div class="text">日志</div>-->
           <!--<div class="icon right"></div>-->
         <!--</li>-->
-        <li>
+        <li @click="handleModal('money')">
           <div class="icon left money"></div>
           <div class="text">赞赏</div>
           <div class="icon right"></div>
@@ -102,13 +102,14 @@
 
         modalType: 'money',
 
-        showModal: true,
+        showModal: false,
         modalTit: "关于",
         modalMsg: "本项目作于2020年的下半年，在注定不平凡的这一年里，上半年让人无所适从，下半年则让人心慌意乱。在图书馆复习备考之余，难免因为用脑过度导致身体疲乏。疲乏之余总想趴着睡会儿，但一睡则是天昏地暗，从此告别世人。心生一计，整理了一下库存里的小游戏，用来缓解一下备考时的身体疲乏。",
       }
     },
     created() {
       this.bubbles.length = 12;
+      console.log(this.bubbles)
     },
     methods: {
       toFeedback() {
@@ -119,6 +120,10 @@
       },
       toWebsite(url) {
         location.href = url
+      },
+      handleModal(type){
+        this.modalType = type;
+        this.showModal = true;
       }
     }
   }
@@ -138,7 +143,6 @@
     padding: 0;
     list-style: none;
   }
-
 
   .hero {
     overflow: hidden;
@@ -216,7 +220,7 @@
     height: 40vh;
   }
 
-  .bg-bubbles {
+  .bg-bubbles li {
     position: absolute;
     bottom: -160px;
     width: 40px;
@@ -228,51 +232,55 @@
     transition-timing-function: linear;
   }
 
-  .bg-bubbles :nth-child(1) {
+  .bg-bubbles li:nth-child(1) {
     left: 10%;
   }
 
-  .bg-bubbles :nth-child(2) {
+  .bg-bubbles li:nth-child(2) {
     left: 20%;
-    width: 90px;
-    height: 90px;
+    width: 40px;
+    height: 40px;
     animation-delay: 2s;
     animation-duration: 7s;
   }
 
-  .bg-bubbles :nth-child(3) {
+  .bg-bubbles li:nth-child(3) {
     left: 25%;
     animation-delay: 4s;
   }
 
-  .bg-bubbles :nth-child(4) {
+  .bg-bubbles li:nth-child(4) {
     left: 40%;
-    width: 60px;
-    height: 60px;
+    width: 32px;
+    height: 32px;
     animation-duration: 8s;
     background-color: rgba(255, 255, 255, 0.3);
   }
 
-  .bg-bubbles :nth-child(5) {
+  .bg-bubbles li:nth-child(5) {
     left: 70%;
+    width: 10px;
+    height: 10px;
+    animation-delay: 2s;
+    background-color: rgba(255, 255, 255, 0.2);
   }
 
-  .bg-bubbles :nth-child(6) {
+  .bg-bubbles li:nth-child(6) {
     left: 80%;
-    width: 80px;
-    height: 80px;
+    width: 30px;
+    height: 30px;
     animation-delay: 3s;
     background-color: rgba(255, 255, 255, 0.2);
   }
 
-  .bg-bubbles :nth-child(7) {
+  .bg-bubbles li:nth-child(7) {
     left: 32%;
-    width: 60px;
-    height: 60px;
+    width: 20px;
+    height: 20px;
     animation-delay: 2s;
   }
 
-  .bg-bubbles :nth-child(8) {
+  .bg-bubbles li:nth-child(8) {
     left: 55%;
     width: 20px;
     height: 20px;
@@ -280,7 +288,7 @@
     animation-duration: 15s;
   }
 
-  .bg-bubbles :nth-child(9) {
+  .bg-bubbles li:nth-child(9) {
     left: 25%;
     width: 10px;
     height: 10px;
@@ -289,10 +297,10 @@
     background-color: rgba(255, 255, 255, 0.3);
   }
 
-  .bg-bubbles :nth-child(10) {
+  .bg-bubbles li:nth-child(10) {
     left: 85%;
-    width: 60px;
-    height: 60px;
+    width: 40px;
+    height: 40px;
     animation-delay: 5s;
   }
 
@@ -365,7 +373,7 @@
     /*left: 5%;*/
   }
 
-  .content li {
+  .content .content-list li {
     font-size: 14px;
     line-height: 30px;
     color: #606266;
@@ -377,67 +385,67 @@
     height: 35px;
   }
 
-  .content li .text {
+  .content .content-list li .text {
     width: calc(100% - 60px);
     text-align: left;
   }
 
-  .content li .icon {
+  .content .content-list li .icon {
     background-color: #000;
     height: 15px;
     width: 15px;
   }
 
-  .content li .right {
+  .content .content-list li .right {
     -webkit-mask-box-image: url("../assets/svg/right.svg");
     -webkit-mask: url("../assets/svg/right.svg");
     mask: url("../assets/svg/right.svg");
     background: #606266;
   }
 
-  .content li .home {
+  .content .content-list li .home {
     -webkit-mask-box-image: url("../assets/svg/home.svg");
     -webkit-mask: url("../assets/svg/home.svg");
     mask: url("../assets/svg/home.svg");
     background-color: #a372ef;
   }
 
-  .content li .github {
+  .content .content-list li .github {
     -webkit-mask-box-image: url("../assets/svg/github.svg");
     -webkit-mask: url("../assets/svg/github.svg");
     mask: url("../assets/svg/github.svg");
     background-color: #869aa1;
   }
 
-  .content li .log {
+  .content .content-list li .log {
     -webkit-mask-box-image: url("../assets/svg/log.svg");
     -webkit-mask: url("../assets/svg/log.svg");
     mask: url("../assets/svg/log.svg");
     background-color: #3bb74b;
   }
 
-  .content li .about {
+  .content .content-list li .about {
     -webkit-mask-box-image: url("../assets/svg/about.svg");
     -webkit-mask: url("../assets/svg/about.svg");
     mask: url("../assets/svg/about.svg");
     background-color: #1dbcb3;
   }
 
-  .content li .money {
+  .content .content-list li .money {
     -webkit-mask-box-image: url("../assets/svg/money.svg");
     -webkit-mask: url("../assets/svg/money.svg");
     mask: url("../assets/svg/money.svg");
     background-color: #e84c3f;
   }
 
-  .content li .feedback {
+  .content .content-list li .feedback {
     -webkit-mask-box-image: url("../assets/svg/feedback.svg");
     -webkit-mask: url("../assets/svg/feedback.svg");
     mask: url("../assets/svg/feedback.svg");
     background-color: #1dbcb3;
   }
 
-  .content li .game {
+  .content .content-list li .game {
     -webkit-mask-box-image: url("../assets/svg/game.svg");
     -webkit-mask: url("../assets/svg/game.svg");
     mask: url("../assets/svg/game.svg");

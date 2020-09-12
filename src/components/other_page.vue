@@ -42,26 +42,13 @@
 
 <script>
   import $ from 'jquery'
+  import data from '../js/gameData'
 
   export default {
     name: "phone_page",
     data() {
       return {
-        cardData: [{
-            'name': '3D天体效果',
-            'id': '001',
-            'type': 'both', 'desc': '超级炫酷的3D天体效果',
-            'more': '超级炫酷的3D天体效果',
-            'url': 'https://game.chenmo1212.cn/other/001/index.html',
-            'cover': 'https://game.chenmo1212.cn/other/001/cover.png'
-          }, {
-            'name': '打击器',
-            'id': '002',
-            'type': 'both', 'desc': '可以自定义的打击器',
-            'more': '可以自定义的打击器',
-            'url': 'https://game.chenmo1212.cn/other/002/index.html',
-            'cover': 'https://game.chenmo1212.cn/other/002/cover.png'
-          }, ]
+        cardData: data.otherData
       }
     },
     created() {
