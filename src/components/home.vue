@@ -10,7 +10,7 @@
       <div class="both" v-if="pageIndex === 2">
         <both_page></both_page>
       </div>
-      <div class="mine" v-if="pageIndex === 3">第四页</div>
+      <div class="mine" v-if="pageIndex === 3"><mine></mine></div>
     </div>
     <!--nav bar-->
     <nav class="tabbar">
@@ -49,6 +49,7 @@
   import phone_page from './phone_page'
   import pc_page from './pc_page'
   import both_page from './other_page'
+  import mine from './mine'
 
   export default {
     name: 'HelloWorld',
@@ -56,6 +57,7 @@
       phone_page,
       pc_page,
       both_page,
+      mine,
     },
     data() {
       return {
