@@ -52,7 +52,7 @@
 
   export default {
     name: 'HelloWorld',
-    components:{
+    components: {
       phone_page,
       pc_page,
       both_page,
@@ -62,17 +62,32 @@
         pageIndex: 0,       // 页面下标
       }
     },
-    created(){},
-    mounted(){
-
+    created() {
+      console.log(localStorage.pageIndex);
+      if (typeof localStorage.pageIndex !== 'undefined'){
+        this.pageIndex = JSON.parse(localStorage.pageIndex);
+      }
+    },
+    mounted() {
       const that = this;
+
+      // 根据本地存储的下标，更改菜单激活位置
+      $('.tabbar ul').each(function () {
+        // console.log(that.pageIndex);
+        $(this).children('li').eq(0).removeClass('active');
+        $(this).children('li').eq(that.pageIndex).addClass('active');
+      });
+
       // tabbar 事件绑定
-      $('.tabbar ul li a').click(function (e) {
+      $('.tabbar ul li a').click(function () {
         let link = $(this),
           li = link.parent();
 
         // console.log($('.tabbar ul li a').index(this));
         that.pageIndex = $('.tabbar ul li a').index(this);
+
+        // 存入本地存储
+        localStorage.setItem("pageIndex", JSON.stringify(that.pageIndex));
 
         that.setTabActive(li.parent(), li);
 
@@ -92,7 +107,7 @@
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
-<style scoped>
+<style>
   .tabbar {
     --primary: #275EFE;
     --background: #fff;
@@ -104,7 +119,7 @@
     border-radius: 21px 21px 0 0;
     /*width: 360px;*/
     width: 100vw;
-    max-width: 400px;
+    /*max-width: 400px;*/
     -webkit-tap-highlight-color: transparent;
     overflow: hidden;
     position: fixed;
@@ -114,7 +129,7 @@
   }
 
   .tabbar ul {
-    --x: 54px;
+    --x: -354px;
     margin: 0;
     padding: 0 12px;
     list-style: none;
@@ -288,9 +303,9 @@
   }
 
   .tabbar ul li.settings a div {
-    -webkit-mask-box-image: url("../assets/svg/qita.svg");
-    -webkit-mask: url("../assets/svg/qita.svg");
-    mask: url("../assets/svg/qita.svg");
+    -webkit-mask-box-image: url("../assets/svg/wode.svg");
+    -webkit-mask: url("../assets/svg/wode.svg");
+    mask: url("../assets/svg/wode.svg");
   }
 
   @-webkit-keyframes bounce {
