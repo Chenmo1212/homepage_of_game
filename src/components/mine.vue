@@ -39,9 +39,9 @@
           <div class="icon right"></div>
         </li>
         <!--<li>-->
-          <!--<div class="icon left log"></div>-->
-          <!--<div class="text">日志</div>-->
-          <!--<div class="icon right"></div>-->
+        <!--<div class="icon left log"></div>-->
+        <!--<div class="text">日志</div>-->
+        <!--<div class="icon right"></div>-->
         <!--</li>-->
         <li @click="handleModal('money')">
           <div class="icon left money"></div>
@@ -65,26 +65,33 @@
     <!--模态框-->
     <div class="modal" v-if="showModal">
       <div class="bg" @click="hiddenModal"></div>
-      <div class="content a-bouncein">
-        <div class="close-icon" @click="hiddenModal"><i class="fa fa-times" aria-hidden="true"></i></div>
-        <div class="title"><span>{{modalTit}}</span></div>
 
-        <!--清空数据模态框-->
-        <div class="about-modal" v-if="modalType === 'about'">
-          <div class="text">{{modalMsg}}</div>
-          <div class="btn-group">
-            <div class="btn" @click="hiddenModal">
-              <span>关闭</span>
+      <!--清空数据模态框-->
+      <div class="about-modal-cont" v-if="modalType === 'about'">
+        <div class="content a-bouncein">
+          <div class="close-icon" @click="hiddenModal"><i class="fa fa-times" aria-hidden="true"></i></div>
+          <div class="title"><span>关于</span></div>
+          <div class="about-modal">
+            <div class="text">{{modalMsg}}</div>
+            <div class="btn-group">
+              <div class="btn" @click="hiddenModal">
+                <span>关闭</span>
+              </div>
             </div>
           </div>
         </div>
+      </div>
 
-        <!--清空数据模态框-->
-        <div class="money-modal" v-if="modalType === 'money'">
-          <img src="../assets/money.png" alt="">
-          <div class="btn-group">
-            <div class="btn" @click="hiddenModal">
-              <span>关闭</span>
+      <div class="money-modal-cont"  v-if="modalType === 'money'">
+        <div class="content a-bouncein">
+          <div class="close-icon" @click="hiddenModal"><i class="fa fa-times" aria-hidden="true"></i></div>
+          <div class="title"><span>赞赏</span></div>
+          <div class="money-modal">
+            <img src="../assets/money.png" alt="">
+            <div class="btn-group">
+              <div class="btn" @click="hiddenModal">
+                <span>关闭</span>
+              </div>
             </div>
           </div>
         </div>
@@ -103,7 +110,6 @@
         modalType: 'money',
 
         showModal: false,
-        modalTit: "关于",
         modalMsg: "本项目作于2020年的下半年，在注定不平凡的这一年里，上半年让人无所适从，下半年则让人心慌意乱。在图书馆复习备考之余，难免因为用脑过度导致身体疲乏。疲乏之余总想趴着睡会儿，但一睡则是天昏地暗，从此告别世人。心生一计，整理了一下库存里的小游戏，用来缓解一下备考时的身体疲乏。",
       }
     },
@@ -121,7 +127,7 @@
       toWebsite(url) {
         location.href = url
       },
-      handleModal(type){
+      handleModal(type) {
         this.modalType = type;
         this.showModal = true;
       }
@@ -471,12 +477,21 @@
     top: 0;
   }
 
-  .modal .content {
+  .modal .money-modal-cont {
     position: absolute;
-    width: calc(80% - 10%);
+    top: 100px;
+    width: 100%;
+  }
+  .modal .about-modal-cont {
+    position: absolute;
+    top: 200px;
+    width: 100%;
+  }
+
+  .modal .content {
+    max-width: 400px;
+    width: 80%;
     background-color: #f4f6f8;
-    left: 10%;
-    top: 18%;
     border-radius: 2%;
     padding: 3% 5%;
   }
@@ -535,5 +550,16 @@
   .modal .content .btn-group {
     display: flex;
     color: #599efb;
+  }
+
+  @media screen and (min-width: 1140px) {
+    .modal .content {
+      /*width: auto;*/
+      /*top: 5%;*/
+    }
+
+    .modal .content img {
+      /*width: 400px;*/
+    }
   }
 </style>

@@ -30,7 +30,7 @@
           </div>
           <div class="card-flap flap2">
             <div class="card-actions">
-              <span @click="toGame(value['url'])" class="btn">开始游戏</span>
+              <span @click="toGame(value['url'])" class="btn">点击查看</span>
             </div>
           </div>
         </div>
@@ -111,7 +111,12 @@
           title.removeClass("bg");
         }
       });
-
+    },
+    methods: {
+      toGame(url) {
+        // console.log(url)
+        location.href = url;
+      }
     }
   }
 </script>

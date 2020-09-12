@@ -235,12 +235,19 @@ const otherData =  [{
   'url': 'https://game.chenmo1212.cn/other/002/index.html',
   'cover': 'https://game.chenmo1212.cn/other/002/cover.png'
 }, {
-  'name': '打击器',
+  'name': '架子鼓',
   'id': '003',
-  'type': 'both', 'desc': '可以自定义的打击器',
-  'more': '可以自定义的打击器',
+  'type': 'both', 'desc': '可以自定义的架子鼓',
+  'more': '可以自定义的架子鼓，可以使用快捷键',
   'url': 'https://game.chenmo1212.cn/other/003/index.html',
   'cover': 'https://game.chenmo1212.cn/other/003/cover.png'
+}, {
+  'name': '3D跳动Loading加载动画',
+  'id': '004',
+  'type': 'both', 'desc': '3D跳动Loading加载动画',
+  'more': '这是一款基于HTML5 Canvas的3D跳动Loading加载动画，它的另一个特点是可以动态调节动画参数。',
+  'url': 'https://game.chenmo1212.cn/other/004/index.html',
+  'cover': 'https://game.chenmo1212.cn/other/004/cover.png'
 }, ];
 
 export default {
