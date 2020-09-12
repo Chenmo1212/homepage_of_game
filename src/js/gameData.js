@@ -112,10 +112,10 @@ const gameData = [
     'url': 'https://game.chenmo1212.cn/content/016/index.html',
     'cover': 'https://game.chenmo1212.cn/content/016/cover.png'
   }, {
-    'name': '特工卡尔施',
+    'name': '切方块小游戏',
     'id': '017',
-    'type': 'pc', 'desc': '特工卡尔施',
-    'more': '特工卡尔施',
+    'type': 'both', 'desc': '切方块小游戏，仿切西瓜小游戏',
+    'more': '切方块小游戏，不切西瓜了，来切个方块玩玩',
     'url': 'https://game.chenmo1212.cn/content/017/index.html',
     'cover': 'https://game.chenmo1212.cn/content/017/cover.png'
   }, {
@@ -123,27 +123,27 @@ const gameData = [
     'id': '018',
     'type': 'both', 'desc': '十分考验眼力和速度的小游戏',
     'more': '找色差小游戏，十分考验眼力和速度的小游戏，带有有趣的音效。',
-    'url': 'https://game.chenmo1212.cn/content/017/index.html',
-    'cover': 'https://game.chenmo1212.cn/content/017/cover.png'
+    'url': 'https://game.chenmo1212.cn/content/018/index.html',
+    'cover': 'https://game.chenmo1212.cn/content/018/cover.png'
   }, {
-    'name': '赛车俱乐部',
+    'name': '特工卡尔施',
     'id': '019',
-    'type': 'pc', 'desc': '赛车俱乐部',
-    'more': '赛车俱乐部',
+    'type': 'pc', 'desc': '一款比较好玩的冒险类游戏',
+    'more': '特工卡尔施，一款比较好玩的冒险类游戏',
     'url': 'https://game.chenmo1212.cn/content/019/index.html',
     'cover': 'https://game.chenmo1212.cn/content/019/cover.png'
   }, {
-    'name': '星球大战',
+    'name': '迷失岛',
     'id': '020',
-    'type': 'pc', 'desc': '星球大战',
-    'more': '星球大战',
+    'type': 'pc', 'desc': '迷失岛，一款简单易上手的闯关游戏',
+    'more': '迷失岛，一款简单易上手的闯关游戏',
     'url': 'https://game.chenmo1212.cn/content/020/index.html',
     'cover': 'https://game.chenmo1212.cn/content/020/cover.png'
   }, {
-    'name': '萌萌水贼',
+    'name': '赛车俱乐部',
     'id': '021',
-    'type': 'both', 'desc': '萌萌水贼',
-    'more': '萌萌水贼',
+    'type': 'both', 'desc': '赛车俱乐部，十分简易的赛车游戏',
+    'more': '赛车俱乐部，十分简易的赛车游戏',
     'url': 'https://game.chenmo1212.cn/content/021/index.html',
     'cover': 'https://game.chenmo1212.cn/content/021/cover.png'
   }, {
@@ -154,52 +154,52 @@ const gameData = [
     'url': 'https://game.chenmo1212.cn/content/022/index.html',
     'cover': 'https://game.chenmo1212.cn/content/022/cover.png'
   }, {
-    'name': 'Flappy 2048',
+    'name': '萌萌水贼',
     'id': '023',
-    'type': 'both', 'desc': 'Flappy 2048',
-    'more': 'Flappy 2048',
+    'type': 'both', 'desc': '萌萌水贼，超萌又休闲的小游戏',
+    'more': '萌萌水贼，超萌又休闲的小游戏',
     'url': 'https://game.chenmo1212.cn/content/023/index.html',
     'cover': 'https://game.chenmo1212.cn/content/023/cover.png'
   }, {
-    'name': 'HTML5版驴子跳',
+    'name': 'X赛车',
     'id': '024',
-    'type': 'both', 'desc': 'HTML5版驴子跳',
-    'more': 'HTML5版驴子跳',
+    'type': 'both', 'desc': 'X赛车，另一款比较好玩的小游戏',
+    'more': 'X赛车，另一款比较好玩的小游戏',
     'url': 'https://game.chenmo1212.cn/content/024/index.html',
     'cover': 'https://game.chenmo1212.cn/content/024/cover.png'
   }, {
-    'name': '最强眼力',
+    'name': 'Flappy 2048',
     'id': '025',
-    'type': 'both', 'desc': '最强眼力',
-    'more': '最强眼力',
+    'type': 'both', 'desc': '结合了fly bird和2048的休闲游戏',
+    'more': '结合了fly bird和2048的休闲游戏，非常值得一玩。',
     'url': 'https://game.chenmo1212.cn/content/025/index.html',
     'cover': 'https://game.chenmo1212.cn/content/025/cover.png'
   }, {
-    'name': '3D兔子跑酷',
+    'name': '驴子跳跳小游戏',
     'id': '026',
-    'type': 'both', 'desc': '3D兔子跑酷',
-    'more': '3D兔子跑酷',
+    'type': 'both', 'desc': '驴子跳跳小游戏',
+    'more': '驴子跳跳小游戏，看你能上多少层',
     'url': 'https://game.chenmo1212.cn/content/026/index.html',
     'cover': 'https://game.chenmo1212.cn/content/026/cover.png'
   }, {
-    'name': '泡泡龙',
+    'name': '最强眼力',
     'id': '027',
-    'type': 'both', 'desc': '泡泡龙',
-    'more': '泡泡龙',
+    'type': 'both', 'desc': '最强眼力，一个考验眼力的小游戏',
+    'more': '一个考验眼力的小游戏，你能闯到第十关吗？',
     'url': 'https://game.chenmo1212.cn/content/027/index.html',
     'cover': 'https://game.chenmo1212.cn/content/027/cover.png'
   }, {
-    'name': '射箭小游戏【超精致】',
+    'name': '3D兔子跑酷',
     'id': '028',
-    'type': 'pc', 'desc': '射箭小游戏【超精致】',
-    'more': '射箭小游戏【超精致】',
+    'type': 'pc', 'desc': '3D兔子跑酷',
+    'more': '3D兔子跑酷',
     'url': 'https://game.chenmo1212.cn/content/028/index.html',
     'cover': 'https://game.chenmo1212.cn/content/028/cover.png'
   }, {
-    'name': '飞行游戏',
+    'name': '泡泡龙',
     'id': '029',
-    'type': 'pc', 'desc': '飞行游戏',
-    'more': '飞行游戏',
+    'type': 'both', 'desc': '回忆童年的泡泡龙',
+    'more': '经典游戏泡泡龙，回忆童年',
     'url': 'https://game.chenmo1212.cn/content/029/index.html',
     'cover': 'https://game.chenmo1212.cn/content/029/cover.png'
   }, {
@@ -234,7 +234,14 @@ const otherData =  [{
   'more': '可以自定义的打击器',
   'url': 'https://game.chenmo1212.cn/other/002/index.html',
   'cover': 'https://game.chenmo1212.cn/other/002/cover.png'
-}, ]
+}, {
+  'name': '打击器',
+  'id': '003',
+  'type': 'both', 'desc': '可以自定义的打击器',
+  'more': '可以自定义的打击器',
+  'url': 'https://game.chenmo1212.cn/other/003/index.html',
+  'cover': 'https://game.chenmo1212.cn/other/003/cover.png'
+}, ];
 
 export default {
   gameData,

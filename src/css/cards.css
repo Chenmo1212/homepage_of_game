@@ -38,8 +38,8 @@ span.btn:active {
 }
 
 div.cards {
-  margin: -30% auto 100px;
-  /*padding-top: 30%;*/
+  margin: -30% auto 0;
+  padding-bottom: 200px;
   max-width: 960px;
   text-align: center;
 }
@@ -224,7 +224,8 @@ div.card.show div.flap2 {
 
 @media screen and (min-width: 1140px){
   div.cards {
-    margin: -5% auto 100px;
+    margin: -5% auto 0;
+    padding-bottom: 200px;
   }
 }
 

@@ -344,6 +344,7 @@
     align-items: center;
     justify-content: center;
     z-index: 20;
+    width: 100%;
   }
 
   .header .avatar {
