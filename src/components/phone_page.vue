@@ -10,6 +10,33 @@
 
     <div class="cards a-fadeinB">
 
+      <div class="card last-game" v-if="last.isShow">
+        <span class="ribbon3">最近游戏</span>
+        <div class="card__image-holder">
+          <img class="card__image" :src="last.cover" alt="wave"/>
+        </div>
+        <div class="card-title">
+          <a :href="last['url']" class="toggle-info btn">
+            <span class="left"></span>
+            <span class="right"></span>
+          </a>
+          <h2>
+            {{last.name}}
+            <small>{{last.desc}}</small>
+          </h2>
+        </div>
+        <div class="card-flap flap1">
+          <div class="card-description">
+            {{last.more}}
+          </div>
+          <div class="card-flap flap2">
+            <div class="card-actions">
+              <span @click.prevent="toGame(last['url'])" class="btn">开始游戏</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
       <div class="card" v-for="(value, index) in dataList" v-if="value.type === 'phone' || value.type === 'both'" :key="index">
         <div class="card__image-holder">
           <img class="card__image" :src="value.cover" alt="wave"/>
@@ -30,7 +57,7 @@
           </div>
           <div class="card-flap flap2">
             <div class="card-actions">
-              <span @click.prevent="toGame(value['url'])" class="btn">开始游戏</span>
+              <span @click.prevent="toGame(value['url'], value)" class="btn">开始游戏</span>
             </div>
           </div>
         </div>
@@ -56,10 +83,25 @@
         cardData: data.gameData,
         dataList: [],
         moreShowBoolen: false,
-        nowPage: 1
+        nowPage: 1,
+
+        last: {
+          name: '赛车游戏带闯关',
+          id: '046',
+          type: 'pc', 'desc': '赛车游戏带闯关',
+          more: '打怪小游戏，一款冒险闯关的小游戏',
+          url: 'https://game.chenmo1212.cn/content/046/index.html',
+          cover: 'https://game.chenmo1212.cn/content/046/cover.png',
+          isShow: false,
+        }
       }
     },
     created() {
+      if (typeof localStorage.phone_lastGame !== 'undefined'){
+        if (JSON.parse(localStorage.phone_lastGame).isShow){
+          this.last = JSON.parse(localStorage.phone_lastGame);
+        }
+      }
     },
     mounted() {
       // card
@@ -125,11 +167,16 @@
 
     },
     methods: {
-      toGame(url) {
+      toGame(url, item) {
         // console.log(url)
         let tempWindow = window.open('_blank');
         // 打开一个窗口，然后用
         tempWindow.location=url;
+
+        this.last = item;
+        this.last["isShow"] = true;
+
+        localStorage.setItem('phone_lastGame', JSON.stringify(this.last))
       },
 
       init () {
@@ -206,4 +253,42 @@
     transition: all 0.1s 0s ease-out;
     cursor: pointer;
   }
+
+  .ribbon3 {
+    display: inline-block;
+    position: absolute;
+    color: #fff;
+    font-size: 20px;
+    width: 150px;
+    height: 50px;
+    line-height: 50px;
+    padding-left: 15px;
+    background: linear-gradient(100deg, #24A4EA, #379DEB 25%, #B76BF0);;
+    left: -8px;
+    top: 20px
+  }
+
+  .ribbon3:before, .ribbon3:after {
+    content: "";
+    position: absolute;
+  }
+
+  .ribbon3:before {
+    height: 0;
+    width: 0;
+    border-bottom: 8px solid #24A4EA;
+    border-left: 8px solid transparent;
+    top: -8px;
+    left: 0;
+  }
+
+  .ribbon3:after {
+    height: 0;
+    width: 0;
+    border-top: 25px solid transparent;
+    border-bottom: 25px solid transparent;
+    border-left: 15px solid #B76BF0;
+    right: -15px;
+  }
+
 </style>
