@@ -127,7 +127,9 @@
     methods: {
       toGame(url) {
         // console.log(url)
-        location.href = url;
+        let tempWindow = window.open('_blank');
+        // 打开一个窗口，然后用
+        tempWindow.location=url;
       },
 
       init () {

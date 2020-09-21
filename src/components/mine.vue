@@ -125,7 +125,9 @@
         this.showModal = false;
       },
       toWebsite(url) {
-        location.href = url
+        let tempWindow = window.open('_blank');
+        // 打开一个窗口，然后用
+        tempWindow.location=url;
       },
       handleModal(type) {
         this.modalType = type;
