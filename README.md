@@ -2,6 +2,9 @@
 
 > A Vue.js project
 
+# demo
+[HomePage](https://game.chenmo1212.cn)
+
 ## Build Setup
 
 ``` bash
