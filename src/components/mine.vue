@@ -55,7 +55,7 @@
         </li>
         <li @click="toWebsite('https://www.yikm.net/')">
           <div class="icon left game"></div>
-          <div class="text">更多</div>
+          <div class="text">更多游戏</div>
           <div class="icon right"></div>
         </li>
       </ul>
@@ -347,7 +347,7 @@
   .header {
     position: absolute;
     top: 0;
-    height: 40vh;
+    height: 35vh;
     display: flex;
     align-items: center;
     justify-content: center;
