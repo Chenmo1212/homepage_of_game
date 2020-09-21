@@ -10,7 +10,7 @@
 
     <div class="cards a-fadeinB">
 
-      <div class="card" v-for="(value) in cardData" v-if="value.type === 'pc' || value.type === 'both'">
+      <div class="card" v-for="(value, index) in dataList" v-if="value.type === 'pc' || value.type === 'both'" :key="index">
         <div class="card__image-holder">
           <img class="card__image" :src="value.cover" alt="wave"/>
         </div>
@@ -36,6 +36,10 @@
         </div>
       </div>
 
+      <div>
+        <div v-if="moreShowBoolen" @click="moreShow" class="more">点击查看更多</div>
+        <div v-else class="no-more">已无更多</div>
+      </div>
     </div>
   </div>
 </template>
@@ -48,7 +52,10 @@
     name: "phone_page",
     data() {
       return {
-        cardData: data.gameData
+        cardData: data.gameData,
+        dataList: [],
+        moreShowBoolen: false,
+        nowPage: 1
       }
     },
     created() {
@@ -113,11 +120,29 @@
         }
       });
 
+      // cardData
+      this.init()
     },
     methods: {
       toGame(url) {
         // console.log(url)
         location.href = url;
+      },
+
+      init () {
+        if (this.cardData.length <= 10) { // 10条数据一页
+          this.dataList = this.cardData
+          this.moreShowBoolen = false
+        } else {
+          this.dataList = this.cardData.slice(0, 10)
+          this.moreShowBoolen = true
+        }
+      },
+
+      moreShow () { // 点击查询更多
+        this.dataList = this.dataList.concat(this.cardData.slice(this.nowPage * 10, (this.nowPage + 1) * 10))
+        this.nowPage++;
+        this.moreShowBoolen = this.cardData.length >= this.nowPage * 10;
       }
     }
   }
@@ -162,6 +187,22 @@
     top: 0;
   }
 
+  .more,
+  .no-more {
+    margin-top: 20px;
+    background: linear-gradient(100deg, #24A4EA, #379DEB 25%, #B76BF0);
+    border-radius: 4px;
+    -webkit-box-shadow: 0 2px 0 0 rgba(0, 0, 0, 0.25);
+    box-shadow: 0 2px 0 0 rgba(0, 0, 0, 0.25);
+    color: #ffffff;
+    display: inline-block;
+    padding: 6px 30px 8px;
+    position: relative;
+    text-decoration: none;
+    -webkit-transition: all 0.1s 0s ease-out;
+    transition: all 0.1s 0s ease-out;
+    cursor: pointer;
+  }
 
 </style>
 

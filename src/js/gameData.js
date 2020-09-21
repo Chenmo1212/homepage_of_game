@@ -212,10 +212,234 @@ const gameData = [
   }, {
     'name': '永不放弃',
     'id': '032',
-    'type': 'both', 'desc': '永不放弃',
+    'type': 'pc', 'desc': '永不放弃',
     'more': '永不放弃',
     'url': 'https://game.chenmo1212.cn/content/032/index.html',
     'cover': 'https://game.chenmo1212.cn/content/032/cover.png'
+  }, {
+    'name': '火柴人绳索挑战',
+    'id': '035',
+    'type': 'pc', 'desc': '火柴人绳索挑战小游戏',
+    'more': '火柴人绳索挑战小游戏，刺激又好玩的小游戏',
+    'url': 'https://game.chenmo1212.cn/content/035/index.html',
+    'cover': 'https://game.chenmo1212.cn/content/035/cover.png'
+  }, {
+    'name': '海盗僵尸杀杀杀',
+    'id': '036',
+    'type': 'both', 'desc': '海盗僵尸杀杀杀小游戏',
+    'more': '海盗僵尸杀杀杀，一款冒险闯关的小游戏',
+    'url': 'https://game.chenmo1212.cn/content/036/index.html',
+    'cover': 'https://game.chenmo1212.cn/content/036/cover.png'
+  }, {
+    'name': '僵尸鸭猎手',
+    'id': '037',
+    'type': 'both', 'desc': '僵尸鸭猎手小游戏',
+    'more': '僵尸鸭猎手，一款考验手速的小游戏',
+    'url': 'https://game.chenmo1212.cn/content/037/index.html',
+    'cover': 'https://game.chenmo1212.cn/content/037/cover.png'
+  }, {
+    'name': '卡通飞行',
+    'id': '038',
+    'type': 'both', 'desc': '卡通飞行小游戏',
+    'more': '卡通飞行小游戏，一款飞行躲避的小游戏',
+    'url': 'https://game.chenmo1212.cn/content/038/index.html',
+    'cover': 'https://game.chenmo1212.cn/content/038/cover.png'
+  }, {
+    'name': '六边形下降',
+    'id': '039',
+    'type': 'both', 'desc': '六边形下降小游戏',
+    'more': '六边形下降，一款休闲益智的小游戏',
+    'url': 'https://game.chenmo1212.cn/content/039/index.html',
+    'cover': 'https://game.chenmo1212.cn/content/039/cover.png'
+  }, {
+    'name': '银河舰队雷霆战机',
+    'id': '040',
+    'type': 'pc', 'desc': '银河舰队雷霆战机',
+    'more': '银河舰队雷霆战机，一款飞行躲避的小游戏',
+    'url': 'https://www.17sucai.com/preview/1750631/2019-09-02/lt/index.html',
+    'cover': 'https://game.chenmo1212.cn/content/040/cover.png'
+  }, {
+    'name': '霓虹球3D滚动游戏',
+    'id': '041',
+    'type': 'both', 'desc': '霓虹球3D滚动游戏',
+    'more': '霓虹球3D滚动游戏，一款简单又刺激的小游戏',
+    'url': 'https://game.chenmo1212.cn/content/041/index.html',
+    'cover': 'https://game.chenmo1212.cn/content/041/cover.png'
+  }, {
+    'name': '打怪小游戏',
+    'id': '042',
+    'type': 'pc', 'desc': '打怪小游戏',
+    'more': '打怪小游戏，一款冒险闯关的小游戏',
+    'url': 'https://game.chenmo1212.cn/content/042/index.html',
+    'cover': 'https://game.chenmo1212.cn/content/042/cover.png'
+  }, {
+    'name': '疯狂大脚车小游戏带吃金币闯关',
+    'id': '043',
+    'type': 'pc', 'desc': '疯狂大脚车小游戏带吃金币闯关',
+    'more': '疯狂大脚车小游戏带吃金币闯关，一款简单又刺激的小游戏',
+    'url': 'https://game.chenmo1212.cn/content/043/index.html',
+    'cover': 'https://game.chenmo1212.cn/content/043/cover.png'
+  }, {
+    'name': '黄金矿机千斤顶',
+    'id': '045',
+    'type': 'both', 'desc': '黄金矿机千斤顶',
+    'more': '黄金矿机千斤顶，仿制黄金矿工的小游戏',
+    'url': 'https://game.chenmo1212.cn/content/045/index.html',
+    'cover': 'https://game.chenmo1212.cn/content/045/cover.png'
+  }, {
+    'name': '赛车游戏带闯关',
+    'id': '046',
+    'type': 'pc', 'desc': '赛车游戏带闯关',
+    'more': '打怪小游戏，一款冒险闯关的小游戏',
+    'url': 'https://game.chenmo1212.cn/content/046/index.html',
+    'cover': 'https://game.chenmo1212.cn/content/046/cover.png'
+  }, {
+    'name': '方块英雄',
+    'id': '047',
+    'type': 'both', 'desc': '方块英雄',
+    'more': '方块英雄，一款简单又刺激的小游戏',
+    'url': 'https://game.chenmo1212.cn/content/047/index.html',
+    'cover': 'https://game.chenmo1212.cn/content/047/cover.png'
+  }, {
+    'name': '3D俄罗斯方块',
+    'id': '048',
+    'type': 'pc', 'desc': '3D俄罗斯方块',
+    'more': '3D俄罗斯方块',
+    'url': 'https://game.chenmo1212.cn/content/048/index.html',
+    'cover': 'https://game.chenmo1212.cn/content/048/cover.png'
+  }, {
+    'name': '网络战士小游戏',
+    'id': '049',
+    'type': 'pc', 'desc': '网络战士小游戏',
+    'more': '打怪小游戏，一款冒险闯关的小游戏',
+    'url': 'https://www.17sucai.com/preview/776298/2019-08-13/zs/index.html',
+    'cover': 'https://game.chenmo1212.cn/content/049/cover.png'
+  }, {
+    'name': '土豆历险记',
+    'id': '050',
+    'type': 'both', 'desc': '土豆历险记',
+    'more': '土豆历险记，一款简单又刺激的小游戏',
+    'url': 'https://game.chenmo1212.cn/content/050/index.html',
+    'cover': 'https://game.chenmo1212.cn/content/050/cover.png'
+  }, {
+    'name': '飞行员闯关',
+    'id': '051',
+    'type': 'pc', 'desc': '飞行员闯关',
+    'more': '飞行员闯关，一款简单又刺激的小游戏',
+    'url': 'https://game.chenmo1212.cn/content/051/index.html',
+    'cover': 'https://game.chenmo1212.cn/content/051/cover.png'
+  }, {
+    'name': '表情找不同',
+    'id': '052',
+    'type': 'both', 'desc': '表情找不同',
+    'more': '表情找不同，一款简单又刺激的小游戏',
+    'url': 'https://game.chenmo1212.cn/content/052/index.html',
+    'cover': 'https://game.chenmo1212.cn/content/052/cover.png'
+  }, {
+    'name': '飞机对战小游戏',
+    'id': '053',
+    'type': 'pc', 'desc': '飞机对战小游戏',
+    'more': '飞机对战小游戏，一款简单又刺激的小游戏',
+    'url': 'https://game.chenmo1212.cn/content/053/index.html',
+    'cover': 'https://game.chenmo1212.cn/content/053/cover.png'
+  }, {
+    'name': '踏色块',
+    'id': '054',
+    'type': 'both', 'desc': '踏色块',
+    'more': '踏色块，一款简单又刺激的小游戏',
+    'url': 'https://game.chenmo1212.cn/content/054/index.html',
+    'cover': 'https://game.chenmo1212.cn/content/054/cover.png'
+  }, {
+    'name': '一笔画',
+    'id': '055',
+    'type': 'both', 'desc': '一笔画',
+    'more': '一笔画，一款休闲娱乐的小游戏',
+    'url': 'https://game.chenmo1212.cn/content/055/index.html',
+    'cover': 'https://game.chenmo1212.cn/content/055/cover.png'
+  }, {
+    'name': '见缝插针',
+    'id': '056',
+    'type': 'both', 'desc': '见缝插针',
+    'more': '踏色块，一款简单又刺激的小游戏',
+    'url': 'https://game.chenmo1212.cn/content/056/play.html',
+    'cover': 'https://game.chenmo1212.cn/content/056/cover.png'
+  }, {
+    'name': '沙滩足球',
+    'id': '057',
+    'type': 'pc', 'desc': '沙滩足球',
+    'more': '沙滩足球，一款休闲娱乐的小游戏',
+    'url': 'https://game.chenmo1212.cn/content/057/index.html',
+    'cover': 'https://game.chenmo1212.cn/content/057/cover.png'
+  }, {
+    'name': '切水果大师',
+    'id': '058',
+    'type': 'both', 'desc': '切水果大师',
+    'more': '切水果大师，一款休闲娱乐的小游戏',
+    'url': 'https://game.chenmo1212.cn/content/058/index.html',
+    'cover': 'https://game.chenmo1212.cn/content/058/cover.png'
+  }, {
+    'name': '保护我',
+    'id': '059',
+    'type': 'both', 'desc': '保护我',
+    'more': '保护我，一款简单又刺激的小游戏',
+    'url': 'https://game.chenmo1212.cn/content/059/play.html',
+    'cover': 'https://game.chenmo1212.cn/content/059/cover.png'
+  }, {
+    'name': '小武士之战',
+    'id': '060',
+    'type': 'pc', 'desc': '小武士之战',
+    'more': '小武士之战，一款休闲娱乐的小游戏',
+    'url': 'https://game.chenmo1212.cn/content/060/index.html',
+    'cover': 'https://game.chenmo1212.cn/content/060/cover.png'
+  }, {
+    'name': '飞行棋',
+    'id': '061',
+    'type': 'both', 'desc': '飞行棋',
+    'more': '飞行棋，一款休闲娱乐的小游戏',
+    'url': 'https://game.chenmo1212.cn/content/061/index.html',
+    'cover': 'https://game.chenmo1212.cn/content/061/cover.png'
+  }, {
+    'name': '五子棋',
+    'id': '062',
+    'type': 'both', 'desc': '五子棋',
+    'more': '五子棋，三种模式，单人双人以及观战',
+    'url': 'https://game.chenmo1212.cn/content/062/play.html',
+    'cover': 'https://game.chenmo1212.cn/content/062/cover.png'
+  }, {
+    'name': '海盗大作战塔防',
+    'id': '063',
+    'type': 'both', 'desc': '海盗大作战塔防',
+    'more': '海盗大作战塔防，一款休闲娱乐的小游戏',
+    'url': 'https://game.chenmo1212.cn/content/063/index.html',
+    'cover': 'https://game.chenmo1212.cn/content/063/cover.png'
+  }, {
+    'name': '见缝插针经典版',
+    'id': '064',
+    'type': 'both', 'desc': '见缝插针经典版',
+    'more': '见缝插针经典版',
+    'url': 'https://game.chenmo1212.cn/content/064/play.html',
+    'cover': 'https://game.chenmo1212.cn/content/064/cover.png'
+  }, {
+    'name': '圈圈叉叉小游戏',
+    'id': '065',
+    'type': 'both', 'desc': '圈圈叉叉小游戏',
+    'more': '圈圈叉叉小游戏，一款休闲娱乐的小游戏',
+    'url': 'https://game.chenmo1212.cn/content/065/index.html',
+    'cover': 'https://game.chenmo1212.cn/content/065/cover.png'
+  }, {
+    'name': '打地鼠小游戏',
+    'id': '066',
+    'type': 'both', 'desc': '打地鼠小游戏',
+    'more': '打地鼠小游戏',
+    'url': 'https://game.chenmo1212.cn/content/066/play.html',
+    'cover': 'https://game.chenmo1212.cn/content/066/cover.png'
+  }, {
+    'name': '盲打高手',
+    'id': '067',
+    'type': 'pc', 'desc': '盲打高手',
+    'more': '盲打高手，一款锻炼打字速度的小游戏',
+    'url': 'https://game.chenmo1212.cn/content/067/index.html',
+    'cover': 'https://game.chenmo1212.cn/content/067/cover.png'
   }
 ];
 
