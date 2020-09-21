@@ -42,10 +42,10 @@
           <img class="card__image" :src="value.cover" alt="wave"/>
         </div>
         <div class="card-title">
-          <a :href="value['url']" class="toggle-info btn">
+          <span class="toggle-info btn">
             <span class="left"></span>
             <span class="right"></span>
-          </a>
+          </span>
           <h2>
             {{value.name}}
             <small>{{value.desc}}</small>
@@ -104,51 +104,8 @@
       }
     },
     mounted() {
-      // card
-      $(document).ready(function () {
-        var zindex = 10;
 
-        const cards = $("div.cards");
-
-        $("div.card").click(function (e) {
-          e.preventDefault();
-
-          var isShowing = false;
-
-          if ($(this).hasClass("show")) {
-            isShowing = true
-          }
-
-          if (cards.hasClass("showing")) {
-            // a card is already in view
-            $("div.card.show")
-              .removeClass("show");
-
-            if (isShowing) {
-              // this card was showing - reset the grid
-              cards.removeClass("showing");
-            } else {
-              // this card isn't showing - get in with it
-              $(this)
-                .css({zIndex: zindex})
-                .addClass("show");
-
-            }
-
-            zindex++;
-
-          } else {
-            // no cards in view
-            cards.addClass("showing");
-            $(this)
-              .css({zIndex: zindex})
-              .addClass("show");
-
-            zindex++;
-          }
-
-        });
-      });
+      this.flashCard();
 
       // header
       $(window).scroll(function () {
@@ -193,6 +150,51 @@
         this.dataList = this.dataList.concat(this.cardData.slice(this.nowPage * 10, (this.nowPage + 1) * 10))
         this.nowPage++;
         this.moreShowBoolen = this.cardData.length >= this.nowPage * 10;
+        this.flashCard();
+      },
+
+      flashCard(){
+        // card
+        $(document).ready(function () {
+          var zindex = 10;
+
+          const cards = $("div.cards");
+
+          $("div.card").click(function (e) {
+            e.preventDefault();
+
+            var isShowing = false;
+
+            if ($(this).hasClass("show")) {
+              isShowing = true
+            }
+
+            if (cards.hasClass("showing")) {
+              // a card is already in view
+              $("div.card.show")
+                .removeClass("show");
+
+              if (isShowing) {
+                // this card was showing - reset the grid
+                cards.removeClass("showing");
+              } else {
+                // this card isn't showing - get in with it
+                $(this)
+                  .css({zIndex: zindex})
+                  .addClass("show");
+              }
+              zindex++;
+
+            } else {
+              // no cards in view
+              cards.addClass("showing");
+              $(this)
+                .css({zIndex: zindex})
+                .addClass("show");
+              zindex++;
+            }
+          });
+        });
       }
     }
   }

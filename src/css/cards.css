@@ -80,7 +80,7 @@ div.card div.card-title {
   border-radius: 10px;
 }
 
-div.card div.card-title a.toggle-info {
+div.card div.card-title span.toggle-info {
   border-radius: 32px;
   height: 32px;
   padding: 0;
@@ -90,7 +90,7 @@ div.card div.card-title a.toggle-info {
   width: 32px;
 }
 
-div.card div.card-title a.toggle-info span {
+div.card div.card-title span.toggle-info span {
   background: #ffffff;
   display: block;
   height: 2px;
@@ -101,13 +101,13 @@ div.card div.card-title a.toggle-info span {
   width: 12px;
 }
 
-div.card div.card-title a.toggle-info span.left {
+div.card div.card-title span.toggle-info span.left {
   right: 14px;
   -webkit-transform: rotate(45deg);
   transform: rotate(45deg);
 }
 
-div.card div.card-title a.toggle-info span.right {
+div.card div.card-title span.toggle-info span.right {
   left: 14px;
   -webkit-transform: rotate(-45deg);
   transform: rotate(-45deg);
@@ -188,19 +188,19 @@ div.card.show div.card-title {
   border-radius: 0;
 }
 
-div.card.show div.card-title a.toggle-info {
+div.card.show div.card-title span.toggle-info {
   background: #ff6666 !important;
 }
 
-div.card.show div.card-title a.toggle-info span {
+div.card.show div.card-title span.toggle-info span {
   top: 15px;
 }
 
-div.card.show div.card-title a.toggle-info span.left {
+div.card.show div.card-title span.toggle-info span.left {
   right: 10px;
 }
 
-div.card.show div.card-title a.toggle-info span.right {
+div.card.show div.card-title span.toggle-info span.right {
   left: 10px;
 }
 

@@ -28,10 +28,10 @@ const gameData = [
     'url': 'https://game.chenmo1212.cn/content/004/index.html',
     'cover': 'https://game.chenmo1212.cn/content/004/cover.png'
   }, {
-    'name': '接水管小游戏',
+    'name': '闭环小游戏',
     'id': '005',
-    'type': 'both', 'desc': '接水管小游戏',
-    'more': '接水管小游戏',
+    'type': 'both', 'desc': '闭环小游戏',
+    'more': '闭环小游戏',
     'url': 'https://game.chenmo1212.cn/content/005/index.html',
     'cover': 'https://game.chenmo1212.cn/content/005/cover.png'
   }, {
@@ -329,10 +329,10 @@ const gameData = [
     'url': 'https://game.chenmo1212.cn/content/051/index.html',
     'cover': 'https://game.chenmo1212.cn/content/051/cover.png'
   }, {
-    'name': '表情找不同',
+    'name': '表情连连看',
     'id': '052',
-    'type': 'both', 'desc': '表情找不同',
-    'more': '表情找不同，一款简单又刺激的小游戏',
+    'type': 'both', 'desc': '表情连连看',
+    'more': '表情连连看，一款简单又刺激的小游戏',
     'url': 'https://game.chenmo1212.cn/content/052/index.html',
     'cover': 'https://game.chenmo1212.cn/content/052/cover.png'
   }, {
@@ -382,7 +382,7 @@ const gameData = [
     'id': '059',
     'type': 'both', 'desc': '保护我',
     'more': '保护我，一款简单又刺激的小游戏',
-    'url': 'https://game.chenmo1212.cn/content/059/play.html',
+    'url': 'https://game.chenmo1212.cn/content/059/index.html',
     'cover': 'https://game.chenmo1212.cn/content/059/cover.png'
   }, {
     'name': '小武士之战',
@@ -403,7 +403,7 @@ const gameData = [
     'id': '062',
     'type': 'both', 'desc': '五子棋',
     'more': '五子棋，三种模式，单人双人以及观战',
-    'url': 'https://game.chenmo1212.cn/content/062/play.html',
+    'url': 'https://game.chenmo1212.cn/content/062/index.html',
     'cover': 'https://game.chenmo1212.cn/content/062/cover.png'
   }, {
     'name': '海盗大作战塔防',
@@ -417,7 +417,7 @@ const gameData = [
     'id': '064',
     'type': 'both', 'desc': '见缝插针经典版',
     'more': '见缝插针经典版',
-    'url': 'https://game.chenmo1212.cn/content/064/play.html',
+    'url': 'https://game.chenmo1212.cn/content/064/index.html',
     'cover': 'https://game.chenmo1212.cn/content/064/cover.png'
   }, {
     'name': '圈圈叉叉小游戏',
@@ -431,7 +431,7 @@ const gameData = [
     'id': '066',
     'type': 'both', 'desc': '打地鼠小游戏',
     'more': '打地鼠小游戏',
-    'url': 'https://game.chenmo1212.cn/content/066/play.html',
+    'url': 'https://game.chenmo1212.cn/content/066/index.html',
     'cover': 'https://game.chenmo1212.cn/content/066/cover.png'
   }, {
     'name': '盲打高手',
