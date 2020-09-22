@@ -16,10 +16,10 @@
           <img class="card__image" :src="last.cover" alt="wave"/>
         </div>
         <div class="card-title">
-          <a :href="last['url']" class="toggle-info btn">
+          <span class="toggle-info btn">
             <span class="left"></span>
             <span class="right"></span>
-          </a>
+          </span>
           <h2>
             {{ last.name }}
             <small>{{ last.desc }}</small>
