@@ -603,6 +603,7 @@
     --trash: #E1E6F9;
     --trash-lines: #E1E6F9;
     --check: #fff;
+    --icon: #fff;
     --check-background: #196BE6;
     position: relative;
     border: none;
@@ -622,7 +623,7 @@
     display: block;
     position: relative;
     left: 5px;
-    top: 12px;
+    top: 3px;
   }
   /* Erstellen der vertikalen Griffe */
   .button .trash:before, .button .trash:after {
