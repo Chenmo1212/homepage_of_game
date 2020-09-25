@@ -12,6 +12,21 @@
     </div>
 
     <div class="header">
+      <div class="delete-btn">
+        <button class="button" @click="func" id="delete_btn">
+          <div class="trash">
+            <div class="top">
+              <div class="paper"></div>
+            </div>
+            <div class="box"></div>
+            <div class="check">
+              <svg viewBox="0 0 8 6">
+                <polyline points="1 3.4 2.71428571 5 7 1"></polyline>
+              </svg>
+            </div>
+          </div>
+        </button>
+      </div>
       <div class="info">
         <div class="avatar a-bouncein">
           <img src="../assets/avatar.png" alt="" @click="toWebsite('https://chenmo1212.cn')">
@@ -60,7 +75,6 @@
         </li>
       </ul>
     </div>
-
 
     <!--模态框-->
     <div class="modal" v-if="showModal">
@@ -132,6 +146,15 @@
       handleModal(type) {
         this.modalType = type;
         this.showModal = true;
+      },
+      func(e){
+        const button = document.getElementById('delete_btn')
+        if(!button.classList.contains('delete')) {
+          button.classList.add('delete');
+          localStorage.clear()
+          setTimeout(() => button.classList.remove('delete'), 3200);
+        }
+        e.preventDefault();
       }
     }
   }
@@ -563,5 +586,246 @@
     .modal .content img {
       /*width: 400px;*/
     }
+  }
+
+  .delete-btn {
+    text-align: center;
+    position: absolute;
+    top: 20px;
+    right: 20px;
+  }
+  .button {
+    /* Variablen */
+    --background: linear-gradient(100deg, #B76BF0, #379DEB 75%, #24A4EA);
+    --background-hover: linear-gradient(100deg, #B76BF0, #379DEB 75%, #B76BF0);
+    --shadow: rgba(0, 9, 61, .2);
+    --paper: #FCFDFD;
+    --trash: #E1E6F9;
+    --trash-lines: #E1E6F9;
+    --check: #fff;
+    --check-background: #196BE6;
+    position: relative;
+    border: none;
+    outline: none;
+    background: none;
+    /*padding: 10px 24px;*/
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+    display: flex;
+    background: var(--btn, var(--background));
+    box-shadow: 0 var(--shadow-y, 4px) var(--shadow-blur, 8px) var(--shadow);
+  }
+  /* Ausrichten der Elemente */
+  .button .trash {
+    display: block;
+    position: relative;
+    left: 5px;
+    top: 12px;
+  }
+  /* Erstellen der vertikalen Griffe */
+  .button .trash:before, .button .trash:after {
+    content: '';
+    position: absolute;
+    height: 8px;
+    width: 2px;
+    border-radius: 1px;
+    background: var(--icon, var(--trash));
+    bottom: 100%;
+    transform-origin: 50% 6px;
+    transform: translate(var(--x, 3px), 2px) scaleY(var(--sy, 0.7)) rotate(var(--r, 0deg));
+
+    transition: transform .4s, background .3s;
+  }
+  /* Ausrichten vom linken Griff */
+  .button .trash:before {
+    left: 1px;
+  }
+  /* Ausrichten vom rechten Griff */
+  .button .trash:after {
+    right: 1px;
+    --x: -3px;
+  }
+  /* Rückt elemente in richtige Richtung */
+  .button .trash .top {
+    position: absolute;
+    overflow: hidden;
+    left: -4px;
+    right: -4px;
+    bottom: 100%;
+    height: 40px;
+    z-index: 1;
+    transform: translateY(2px);
+  }
+
+  /* Deckel von Trashcan */
+  .button .trash .top:before, .button .trash .top:after {
+    content: '';
+    position: absolute;
+    border-radius: 1px;
+    background: var(--icon, var(--trash));
+    width: var(--w, 9px);
+    height: var(--h, 2px);
+    left: var(--l, 8px);
+    bottom: var(--b, 5px);
+    /* Langsames zurückgehen des Deckels in Ursprüngliche Form*/
+    transition: background .3s, transform .4s;
+  }
+  /* Deckel von Mülltonne */
+  .button .trash .top:after {
+    --w: 28px;
+    --h: 2px;
+    --l: 0;
+    --b: 0;
+    /* Skalieren des Deckel unterteils */
+    transform: scaleX(var(--trash-line-scale, 1));
+  }
+  /* Animation von Papier */
+  .button .trash .top .paper {
+    width: 14px;
+    height: 18px;
+    background: var(--paper);
+    left: 7px;
+    bottom: 0;
+    border-radius: 1px;
+    position: absolute;
+    /* Runterbewegen des Papiers */
+    transform: translateY(-16px);
+    opacity: 0;
+  }
+  /* Außenrand der Mülltonne */
+  .button .trash .box {
+    width: 17px;
+    height: 20px;
+    border: 2px solid var(--icon, var(--trash));
+    border-radius: 1px 1px 4px 4px;
+    position: relative;
+    overflow: hidden;
+    z-index: 2;
+  }
+  /* Erstellen der zwei Linien auf der Mülltone */
+  .button .trash .box:before, .button .trash .box:after {
+    content: '';
+    position: absolute;
+    width: 4px;
+    height: var(--h, 20px);
+    top: 0;
+    left: var(--l, 50%);
+    background: var(--b, var(--trash-lines));
+  }
+  /* Linien auf Mülltone verschwinden
+     Sichbarkeit der Trashlines */
+  .button .trash .box:before {
+    border-radius: 2px;
+    margin-left: -2px;
+    transform: translateX(-3px) scale(0.6);
+    box-shadow: 10px 0 0 var(--trash-lines);
+    opacity: var(--trash-lines-opacity, 1);
+    transition: transform .4s, opacity .4s;
+  }
+  .button .trash .box:after {
+    --h: 16px;
+    --b: var(--paper);
+    --l: 1px;
+    transform: translate(-0.5px, -16px) scaleX(0.5);
+    box-shadow: 7px 0 0 var(--paper), 14px 0 0 var(--paper), 21px 0 0 var(--paper);
+  }
+  /* Kreis erstellen mit Checkmark */
+  .button .trash .check {
+    padding: 4px 3px;
+    border-radius: 50%;
+    background: var(--check-background);
+    position: absolute;
+    left: 2px;
+    top: 24px;
+    opacity: var(--check-opacity, 0);
+    transform: translateY(var(--check-y, 0)) scale(var(--check-scale, 0.2));
+    /* Runterbewegen des Kreises und Sichbarkeit */
+    transition: transform var(--check-duration, 0.2s) ease var(--check-delay, 0s), opacity var(--check-duration-opacity, 0.2s) ease var(--check-delay, 0s);
+  }
+  /* Animation des Hackens*/
+  .button .trash .check svg {
+    width: 8px;
+    height: 6px;
+    display: block;
+    fill: none;
+    stroke-width: 1.5;
+    stroke-dasharray: 9px;
+    stroke-dashoffset: var(--check-offset, 9px);
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    stroke: var(--check);
+    transition: stroke-dashoffset 0.4s ease var(--checkmark-delay, 0.4s);
+  }
+  .button.delete {
+    --trash-lines-opacity: 0;
+    --trash-line-scale: 0;
+    --check-offset: 0;
+    --check-opacity: 1;
+    --check-scale: 1;
+    --check-y: 16px;
+    --check-delay: 1.7s;
+    --checkmark-delay: 2.1s;
+    --check-duration: .55s;
+    --check-duration-opacity: .3s;
+  }
+  /* Bewegt die Handgriffe */
+  .button.delete .trash:before, .button.delete .trash:after {
+    --sy: 1;
+    --x: 0;
+  }
+  /* Rotiert die Handgriffe */
+  .button.delete .trash:before {
+    --r: 40deg;
+  }
+  .button.delete .trash:after {
+    --r: -40deg;
+  }
+  /* Animiert das Papier */
+  .button.delete .trash .top .paper {
+    animation: paper 1.5s linear forwards .5s;
+  }
+  /* Animiert die Papierstreifen */
+  .button.delete .trash .box:after {
+    animation: cut 1.5s linear forwards .5s;
+  }
+  /* Hover Effekt */
+  .button.delete, .button:hover {
+    --btn: var(--background-hover);
+  }
+  /* Animation von Papier */
+  @keyframes paper {
+    10%,
+    100% {
+      opacity: 1;
+    }
+    20% {
+      transform: translateY(-16px);
+    }
+    40% {
+      transform: translateY(0);
+    }
+    70%,
+    100% {
+      transform: translateY(24px);
+    }
+  }
+  /* Animation für die Papierstreifen */
+  @keyframes cut {
+    0%,
+    40% {
+      transform: translate(-0.5px, -16px) scaleX(0.5);
+    }
+    100% {
+      transform: translate(-0.5px, 24px) scaleX(0.5);
+    }
+  }
+  .button {
+    box-sizing: border-box;
+  }
+
+  .button * {
+    box-sizing: inherit;
   }
 </style>
