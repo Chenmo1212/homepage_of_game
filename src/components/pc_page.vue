@@ -45,7 +45,12 @@
           <span class="toggle-info btn">
             <span class="left"></span>
             <span class="right"></span>
-          </span>
+                    </span>
+          <div @click.stop="handleFavorite(index, value)" id="heart"
+               :class="favoriteStyle(dataList[index].id)"
+          >
+            <div class="heart-flip"></div>
+          </div>
           <h2>
             {{value.name}}
             <small>{{value.desc}}</small>
@@ -80,9 +85,11 @@
     data() {
       return {
         cardData: data.gameData,
-        dataList: [],
-        moreShowBoolen: false,
-        nowPage: 1,
+        dataList: [],                         // dom上显示的数组，懒加载，10个一组
+        otherFavorIdList: [],                 // 我喜欢列表
+        totalData: [],                        // 排列好顺序之后的游戏数组
+        moreShowBoolen: false,                // 更多内容按钮
+        nowPage: 1,                           // 配合懒加载，第一页
 
         last: {
           name: '赛车游戏带闯关',
@@ -119,8 +126,19 @@
         }
       });
 
-      // cardData
-      this.init()
+      // 获取本低的我喜欢列表
+      if (typeof localStorage.otherFavorIdList !== 'undefined'){
+        // 本地存在，且长度不唯一才可以
+        if (JSON.parse(localStorage.otherFavorIdList).length >= 0){
+          this.otherFavorIdList =  JSON.parse(localStorage.otherFavorIdList);
+          this.totalData = this.changeOrder(this.cardData, this.otherFavorIdList);
+
+          // cardData
+          this.init(this.totalData);
+        }
+      } else {
+        this.init(this.cardData);
+      }
     },
     methods: {
       toGame(url, item) {
@@ -132,16 +150,61 @@
         this.last = item;
         this.last["isShow"] = true;
 
+        // 把最后一次的游戏存入本地
         localStorage.setItem('pc_lastGame', JSON.stringify(this.last))
       },
 
-      init () {
-        if (this.cardData.length <= 10) { // 10条数据一页
-          this.dataList = this.cardData
+      /**
+       * 初始化列表，为懒加载做准备
+       * @param totalData 总数居
+       */
+      init (totalData) {
+        if (totalData.length <= 10) { // 10条数据一页
+          this.dataList = totalData;
           this.moreShowBoolen = false
         } else {
-          this.dataList = this.cardData.slice(0, 10)
+          this.dataList = totalData.slice(0, 10)
           this.moreShowBoolen = true
+        }
+      },
+
+      /**
+       * 更改游戏顺序
+       * @param total 总数据
+       * @param favor 我喜欢
+       */
+      changeOrder(total, favor){
+        // 喜欢的列表
+        let like = total.filter((item) => {
+          return favor.includes(item.id)
+        });
+
+        // 喜欢的
+        let noLike = total.filter((item) => {
+          return !favor.includes(item.id)
+        });
+
+        // 合并两个
+        return like.concat(noLike)
+      },
+
+      handleFavorite(index, value){
+        if(!this.otherFavorIdList.includes(value.id)){
+          this.otherFavorIdList.push(value.id);
+        } else {
+          this.otherFavorIdList.splice(this.otherFavorIdList.findIndex(item => item === value.id), 1);
+        }
+
+        localStorage.setItem('otherFavorIdList', JSON.stringify(this.otherFavorIdList))
+      },
+
+      favoriteStyle(id){
+        // console.log(id);
+        if(this.otherFavorIdList.includes(id)){
+          // 存在则激活
+          return 'active heart'
+        } else {
+          return 'heart'
         }
       },
 

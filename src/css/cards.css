@@ -119,6 +119,10 @@ div.card div.card-title h2 {
   letter-spacing: -0.05em;
   margin: 0;
   padding: 0;
+  width: 73%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
 
 div.card div.card-title h2 small {
