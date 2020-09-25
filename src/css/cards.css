@@ -127,7 +127,7 @@ div.card div.card-title h2 small {
   font-weight: 600;
   letter-spacing: -0.025em;
   overflow: hidden;
-  text-overflow:ellipsis;
+  text-overflow: ellipsis;
   white-space: nowrap;
 }
 
@@ -222,11 +222,101 @@ div.card.show div.flap2 {
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
 }
 
-@media screen and (min-width: 1140px){
+@media screen and (min-width: 1140px) {
   div.cards {
     margin: -5% auto 0;
     padding-bottom: 200px;
   }
+}
+
+.heart {
+  cursor: pointer;
+  outline: none;
+  -webkit-appearance: none;
+  -webkit-tap-highlight-color: transparent;
+  position: absolute;
+  right: 70px;
+}
+
+.heart .heart-flip {
+  --base: 17px;
+  --duration: .6s;
+  --active: #ea4673;
+  --inactive: #d1d6ee;
+  display: block;
+  width: var(--base);
+  height: calc(var(--base) + var(--base) / 2);
+  border-radius: calc(var(--base) / 2) calc(var(--base) / 2) 0 0;
+  position: relative;
+  -webkit-transform-origin: 50% 66.66%;
+  transform-origin: 50% 66.66%;
+  -webkit-transform-style: preserve-3d;
+  transform-style: preserve-3d;
+  -webkit-transform: rotate(var(--rotate, -45deg));
+  transform: rotate(var(--rotate, -45deg));
+  -webkit-transition: background var(--duration), -webkit-transform var(--duration) ease;
+  transition: background var(--duration), -webkit-transform var(--duration) ease;
+  transition: background var(--duration), transform var(--duration) ease;
+  transition: background var(--duration), transform var(--duration) ease, -webkit-transform var(--duration) ease;
+  background: var(--heart-background, var(--inactive));
+}
+
+.heart .heart-flip:before, .heart .heart-flip:after {
+  content: '';
+  width: calc(var(--base) / 2);
+  height: var(--base);
+  border-radius: var(--pseudo-border-radius, calc(var(--base) / 2) 0 0 calc(var(--base) / 2));
+  position: absolute;
+  left: var(--pseudo-left, -50%);
+  -webkit-transform-origin: var(--pseudo-origin, 100%) 50%;
+  transform-origin: var(--pseudo-origin, 100%) 50%;
+  bottom: 0;
+  background: var(--heart-background, var(--inactive));
+  -webkit-filter: brightness(var(--pseudo-filter, 50%));
+  filter: brightness(var(--pseudo-filter, 50%));
+  -webkit-transform: translateX(1%) rotateY(var(--pseudo-rotate, 90deg)) translateZ(0);
+  transform: translateX(1%) rotateY(var(--pseudo-rotate, 90deg)) translateZ(0);
+  -webkit-transition: background var(--duration), -webkit-transform var(--duration) ease, -webkit-filter var(--duration);
+  transition: background var(--duration), -webkit-transform var(--duration) ease, -webkit-filter var(--duration);
+  transition: background var(--duration), transform var(--duration) ease, filter var(--duration);
+  transition: background var(--duration), transform var(--duration) ease, filter var(--duration), -webkit-transform var(--duration) ease, -webkit-filter var(--duration);
+}
+
+.heart .heart-flip:after {
+  --pseudo-border-radius: 0 calc(var(--base) / 2) calc(var(--base) / 2) 0;
+  --pseudo-left: 100%;
+  --pseudo-origin: 0;
+  -webkit-filter: brightness(var(--pseudo-filter-second, 100%));
+  filter: brightness(var(--pseudo-filter-second, 100%));
+  -webkit-transform: translateX(-1%) rotateY(var(--pseudo-rotate-second, 0deg)) translateZ(0);
+  transform: translateX(-1%) rotateY(var(--pseudo-rotate-second, 0deg)) translateZ(0);
+}
+
+.heart.active .heart-flip,
+.heart-button.active .heart-flip {
+  --rotate: 45deg;
+  --pseudo-filter: 100%;
+  --pseudo-filter-second: 50%;
+  --pseudo-rotate: 0deg;
+  --pseudo-rotate-second: 90deg;
+  --heart-background: var(--active);
+}
+
+.heart {
+  background: none;
+  border: none;
+  padding: 0;
+  display: inline-block;
+  -webkit-transform: scale(var(--button-scale, 1)) translateZ(0);
+  transform: scale(var(--button-scale, 1)) translateZ(0);
+  -webkit-transition: -webkit-transform .2s;
+  transition: -webkit-transform .2s;
+  transition: transform .2s;
+  transition: transform .2s, -webkit-transform .2s;
+}
+
+.heart:active {
+  --button-scale: .95;
 }
 
 

@@ -46,6 +46,11 @@
             <span class="left"></span>
             <span class="right"></span>
           </span>
+          <div @click.stop="handleFavorite(index, value)" id="heart"
+               :class="favoriteStyle(dataList[index].id)"
+          >
+            <div class="heart-flip"></div>
+          </div>
           <h2>
             {{value.name}}
             <small>{{value.desc}}</small>
@@ -81,9 +86,10 @@
     data() {
       return {
         cardData: data.gameData,
-        dataList: [],
-        moreShowBoolen: false,
-        nowPage: 1,
+        dataList: [],                         // dom上显示的数组，懒加载，10个一组
+        favorIdList: [],                      // 我喜欢列表
+        moreShowBoolen: false,                // 更多内容按钮
+        nowPage: 1,                           // 配合懒加载，第一页
 
         last: {
           name: '赛车游戏带闯关',
@@ -93,7 +99,8 @@
           url: 'https://game.chenmo1212.cn/content/046/index.html',
           cover: 'https://game.chenmo1212.cn/content/046/cover.png',
           isShow: false,
-        }
+        },     // 最后一次游戏
+
       }
     },
     created() {
@@ -104,7 +111,6 @@
       }
     },
     mounted() {
-
       this.flashCard();
 
       // header
@@ -151,6 +157,26 @@
         this.nowPage++;
         this.moreShowBoolen = this.cardData.length >= this.nowPage * 10;
         this.flashCard();
+      },
+
+      handleFavorite(index, value){
+        if(!this.favorIdList.includes(value.id)){
+          this.favorIdList.push(value.id);
+        } else {
+          this.favorIdList.splice(this.favorIdList.findIndex(item => item === value.id), 1);
+        }
+
+        localStorage.setItem('favorIdList', JSON.stringify(this.favorIdList))
+      },
+
+      favoriteStyle(id){
+        // console.log(id);
+        if(this.favorIdList.includes(id)){
+          // 存在则激活
+          return 'active heart'
+        } else {
+          return 'heart'
+        }
       },
 
       flashCard(){
