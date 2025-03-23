@@ -63,11 +63,11 @@
           <div class="text">赞赏</div>
           <div class="icon right"></div>
         </li>
-        <li @click="toFeedback">
-          <div class="icon left feedback"></div>
-          <div class="text">反馈</div>
-          <div class="icon right"></div>
-        </li>
+<!--        <li @click="toFeedback">-->
+<!--          <div class="icon left feedback"></div>-->
+<!--          <div class="text">反馈</div>-->
+<!--          <div class="icon right"></div>-->
+<!--        </li>-->
         <li @click="toWebsite('https://www.yikm.net/')">
           <div class="icon left game"></div>
           <div class="text">更多游戏</div>

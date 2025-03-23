@@ -91,8 +91,6 @@
        * @param index 下标
        */
       handleType(index){
-        console.log(index);
-
         let type1 = document.getElementById('improve');
         let type2 = document.getElementById('bug');
         let type3 = document.getElementById('advise');
